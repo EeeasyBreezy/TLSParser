@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace TLS_Parser
+namespace TLS_Parser.Clients
 {
     /// <summary>
     /// Представление клиента для сайта WebScrapper

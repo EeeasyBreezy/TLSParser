@@ -2,7 +2,7 @@
 using System.Text;
 using System.IO;
 
-namespace TLS_Parser
+namespace TLS_Parser.Clients
 {
     /// <summary>
     /// Базовое представление для web-клиента
@@ -93,7 +93,7 @@ namespace TLS_Parser
             }
             finally
             {
-                responseText = reader.ReadToEnd();
+                responseText = WebUtility.UrlDecode(reader.ReadToEnd());
             }
         }
         /// <summary>

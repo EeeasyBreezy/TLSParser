@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Runtime.Serialization;
 
 namespace TLS_Parser
 {
     /// <summary>
     /// Представление товара
     /// </summary>
+    [DataContract(Name = "item")]
     public sealed class Item
     {
         #region CONSTRUCTORS
@@ -19,7 +16,7 @@ namespace TLS_Parser
         /// <param name="price">Цена</param>
         /// <param name="description">описание</param>
         /// <param name="reviewsNumber">Количество обзоров</param>
-        public Item(string name, int price, string description, int reviewsNumber)
+        public Item(string name, float price, string description, int reviewsNumber)
         {
             Name = name;
             Price = price;
@@ -32,6 +29,7 @@ namespace TLS_Parser
         /// <summary>
         /// Наименование
         /// </summary>
+        [DataMember(Name = "name")]
         public string Name
         {
             get;
@@ -40,7 +38,8 @@ namespace TLS_Parser
         /// <summary>
         /// Цена
         /// </summary>
-        public int Price
+        [DataMember(Name = "price")]
+        public float Price
         {
             get;
             set;
@@ -48,6 +47,7 @@ namespace TLS_Parser
         /// <summary>
         /// Описание
         /// </summary>
+        [DataMember(Name = "description")]
         public string Description
         {
             get;
@@ -56,6 +56,7 @@ namespace TLS_Parser
         /// <summary>
         /// Количество обзоров
         /// </summary>
+        [DataMember(Name = "reviews")]
         public int ReviewsNumber
         {
             get;
